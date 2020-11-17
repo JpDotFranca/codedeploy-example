@@ -1,0 +1,5 @@
+run: |
+                aws deploy create-deployment --application-name CodeDeployServiceRole \
+                    --deployment-config-name CodeDeployDefault.OneAtATime \
+                    --deployment-group-name codedeploy  \
+                    --s3-location bucket=${{ secrets.S3_BUCKET }},bundleType=zip,key=deployment.zip
